@@ -148,3 +148,7 @@ a:hover{
 .light .toggle i:nth-child(2){
     display:block;
 }
+/* transition effect */
+.transition{
+    transition: 2s ease;
+}
