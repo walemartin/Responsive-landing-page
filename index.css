@@ -13,6 +13,7 @@
     --dark-color-two:#45424b;
     --light-one:#919191;
     --light-two:#aaa;
+    
 }
 /* dark theme */
 .dark{
@@ -24,6 +25,7 @@
     --light-one:#919191;
     --light-two:#aaa;
 }
+/* big wrapper */
 .big-wrapper{
     width:100%;
     min-height: 100vh;
@@ -39,6 +41,7 @@
     width: 100%;
     width:50px;
 }
+/* styling the main container inside the header */
 
  .container{
     max-width: 70rem;
@@ -52,26 +55,27 @@
     align-items: center;
     
 }
-.container .logo{
+/* styling the logo */
+ .logo{
     display:flex;
     align-items: center;
 
 }
 /* logo text */
-.container h3{
+ h3{
     letter-spacing: 2px;
     color:var(--dark-color-one);
 
 }
 /* nav-menu */
-.container .nav-menu{
+ .nav-menu{
     display: flex;
     justify-content: space-between;
     width: 350px;
     margin-right: 10px;
 }
 /* nav item */
-.container .nav-menu li{
+ .nav-menu li{
     list-style: none;
 }
 /* nav-links */
@@ -81,19 +85,35 @@ a{
     display:inline-block;
     padding: 7px;
     transition: 1s ease;
+    cursor: pointer;
+    
 }
+/* hover effect */
 a:hover{
     opacity: 0.8;
     transform: scale(1.1);
+    border-bottom: 1px solid #64bcf4;
     
 } 
 .btn{
     color: white !important;
     background-color:var(--main-color);border-radius: 9px;
     padding:7px 10px !important;
+    border-bottom: none !important;
 }
 .btn:hover{
     transform: scale(1)!important;
+}
+/* styling the hamburger */
+.burger div{
+    width:17px;
+    height:2px;
+    margin:3px;
+    background-color:var(--light-one);
+}
+/* disappearing the hamburger in the desktop view */
+.burger{
+    display:none;
 }
 
 
@@ -152,3 +172,95 @@ a:hover{
 .transition{
     transition: 2s ease;
 }
+/* animation slide 1 */
+.display-effect{
+   animation: appear 1s forwards;
+
+}
+@keyframes appear{
+    0%{
+        clip-path:circle(30% at -25% -25%);
+    }
+    100%{
+        clip-path: circle(150% at 0 0);
+    }
+}
+/* animation slide 2 */
+.display-re-effect{
+    animation: re-appear 1s forwards;
+
+}
+
+@keyframes re-appear{
+    from{
+        clip-path:circle(30% at -25% -25%);
+    }
+    to{
+        clip-path: circle(150% at 0 0);
+    }
+    
+}
+@media screen and (max-width:700px){
+      .nav-menu{
+        position:absolute;
+        top:10vh;
+        right:0;
+        margin-right: 0px;
+        width:40%;
+        display:flex;
+        flex-direction:column;
+        height: 70vh;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--hover-color);
+        transform: translateX(500px);
+        transition: transform 1s;
+    }
+    .showcase-area .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        z-index: 0;
+        position: relative;  
+    }
+    a{
+        color:#f1f8fc;
+    }
+    .person{
+        width:100%;
+        transform: none;
+    }
+    /* opening harmburger */
+    .burger{
+        display:block;
+    }
+    .nav-menu li{
+        opacity:0;
+
+    }
+    .nav-display{
+        transform: translateX(0px);
+        top:0;
+    }   
+     @keyframes nav-item-animate {
+         0%{
+             opacity:0px;
+             transform: translateX(50px);
+         }
+         100%{
+             opacity:1;
+             transform: translateX(0px);
+         }
+         
+     }
+     /* the closing amburger */
+     .toggleHam .line1{
+        transform: rotate(130deg);
+        position: absolute;
+     }
+     .toggleHam .line2{
+        transform: rotate(49deg);
+     }
+     .toggleHam .line3{
+        display:none;
+     }
+    }
