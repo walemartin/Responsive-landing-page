@@ -1,1 +1,1 @@
-creating a responsive landing page using html, css and javascript
+creating a responsive landing page having a light and dark theme  using html, css and javascript
